@@ -1,7 +1,7 @@
 import 'package:cozinha_receitas/models/category.dart';
+import 'package:cozinha_receitas/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import '../models/category.dart';
-import '../screens/categories_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;
@@ -9,7 +9,8 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.category);
 
   void _selectCategory(BuildContext context) {
-    Navigator.of(context).pushNamed('/categories-meals', arguments: category);
+    Navigator.of(context)
+        .pushNamed(AppRoutes.CATEGORY_MEALS, arguments: category);
   }
 
   @override
