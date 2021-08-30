@@ -1,3 +1,4 @@
+import 'package:cozinha_receitas/screens/categories_screen.dart';
 import 'package:cozinha_receitas/utils/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,11 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: AppRoutes.HOME,
       routes: AppRoutes().routes,
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (_) {
+          return CategoriesScreen();
+        });
+      },
     );
   }
 }
